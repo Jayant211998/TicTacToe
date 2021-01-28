@@ -3,6 +3,7 @@ from tkinter import messagebox
 import random
 #import time
 # from goto import goto,label
+
 def Property(x):
     prop = []
     for i in x:
@@ -224,7 +225,7 @@ def click1():
                 compturn(comp, user, prop, x, u1, c1, l)
         gameover(user, comp)
     except:
-        pass
+        print("Error")
 
 
 def click2():
@@ -240,7 +241,7 @@ def click2():
                 compturn(comp, user, prop, x, u1, c1, l)
         gameover(user, comp)
     except:
-        pass
+        print("Error")
 
 
 def click3():
