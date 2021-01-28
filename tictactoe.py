@@ -225,7 +225,7 @@ def click1():
                 compturn(comp, user, prop, x, u1, c1, l)
         gameover(user, comp)
     except:
-        print("Error")
+        print("ErrorHandeled")
 
 
 def click2():
@@ -241,7 +241,7 @@ def click2():
                 compturn(comp, user, prop, x, u1, c1, l)
         gameover(user, comp)
     except:
-        print("Error")
+        print("ErrorHandeled")
 
 
 def click3():
@@ -387,7 +387,7 @@ def click11():
         u1.clear()
     n += 1
     window = Tk()
-    window.title("Tic-Tac-Toe")
+    window.title("Tic-Tac-Toe Game")
     window.geometry("400x300")
     global turn
     global prop
