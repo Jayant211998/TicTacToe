@@ -1,9 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
 import random
-#import time
-# from goto import goto,label
-
 def Property(x):
     prop = []
     for i in x:
@@ -81,12 +78,22 @@ def whicheven(x, l, u1, prop):
         return (random.choice([1,3,5,7]))
 
 
-def whichnone(x, l, u1, prop):
+def whichnone(x,  l, u1, prop):
     if (u1[0] + u1[1] - 4) != 4:
         return (u1[0] + u1[1] - 4)
     else:
         return (0)
-
+    
+def valcorner(x):
+    if 0 in x:
+        return 0
+    elif 2 in x:
+        return 2
+    elif 6 in x:
+        return 6
+    elif 8 in x:
+        return 8
+        
 
 def gameover(user, comp):
     global u
@@ -135,10 +142,8 @@ def compturn(comp, user, prop, x, u1, c1, l):
         if gameover(user, comp) == 1:
             if (attackordefend(comp, x, prop) >= 0):
                 a = attackordefend(comp, x, prop)
-                # print("attack")
             elif (attackordefend(user, x, prop) >= 0):
                 a = attackordefend(user, x, prop)
-                # print("defend")
             else:
                 try:
                     a = random.choice(x)
@@ -168,6 +173,8 @@ def compturn(comp, user, prop, x, u1, c1, l):
                 a = whicheven(x, l, u1, prop)
             elif (attackordefend(user, x, prop) == -1 and isnone(x, l, u1, prop)):
                 a = whichnone(x, l, u1, prop)
+            elif (0 in x) or (2 in x) or (6 in x) or (8 in x) :
+                a=valcorner(x)
             else:
                 try:
                     a = x[len(x) - 1]
@@ -209,10 +216,7 @@ def change(u):
     user.extend(prop[u])
     x.remove(u)
     u1.append(u)
-
-
 def click1():
-    #    label .SB
     try:
         if btn[0]["text"] == " ":
             btn[0]["text"] = "X"
@@ -225,9 +229,7 @@ def click1():
                 compturn(comp, user, prop, x, u1, c1, l)
         gameover(user, comp)
     except:
-        print("ErrorHandeled")
-
-
+        pass
 def click2():
     try:
         if btn[1]["text"] == " ":
@@ -241,7 +243,7 @@ def click2():
                 compturn(comp, user, prop, x, u1, c1, l)
         gameover(user, comp)
     except:
-        print("ErrorHandeled")
+        pass
 
 
 def click3():
@@ -387,7 +389,7 @@ def click11():
         u1.clear()
     n += 1
     window = Tk()
-    window.title("Tic-Tac-Toe Game")
+    window.title("Tic-Tac-Toe")
     window.geometry("400x300")
     global turn
     global prop
@@ -449,9 +451,6 @@ def click11():
                   command=click9)
     btn9.grid(column=3, row=3)
     btn.append(btn9)
-    #btn10 = Button(window, text="Close ", bg="red", width=8, height=1, font=("Times New Roman", "10"),
-    #               command=click10)
-    #btn10.grid(column=0, row=5)
     btn11 = Button(window, text=" Play Again", bg="lightgreen", width=8, height=1, font=("Times New Roman", "10"),
                    command=click11)
     btn11.grid(column=0, row=6)
