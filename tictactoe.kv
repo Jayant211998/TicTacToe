@@ -1,0 +1,65 @@
+#:kivy 2.0.0
+<Launch>
+    id:launch
+    GridLayout:
+        cols: 3
+        id: layout
+        Label:
+            text:'Level-1'
+            id: level
+            name: 'level'
+        Label:
+            text:''
+        Label:
+            text:'You: X \n\nComputer: O'
+        Button:
+            on_press: hello
+            id: btn1
+            name:'btn1'
+        Button:
+            on_press: self.text = 'X'
+            id: btn2
+            name:'btn2'
+        Button:
+            on_press: self.text = 'X'
+            id: btn3
+            name:'btn3'
+        Button:
+            on_press: self.text = 'X'
+            id: btn4
+            name:'btn4'
+        Button:
+            on_press: self.text = 'X'
+            id: btn5
+            name:'btn5'
+        Button:
+            on_press: self.text = 'X'
+            id: btn6
+            name:'btn6'
+        Button:
+            on_press: self.text = 'X'
+            id: btn7
+            name:'btn7'
+        Button:
+            on_press: self.text = 'X'
+            id: btn8
+            name:'btn8'
+        Button:
+            on_press: self.text = 'X'
+            id: btn9
+            name:'btn9'
+        Label:
+            Button:
+                text:'Play Again'
+                pos:root.x+50, root.y+50
+                size: 170, 100
+        Label:
+            Button:
+                text:'Next Level'
+                pos:root.x+500, root.y+50
+                size: 170, 100
+
+
+
+
+
